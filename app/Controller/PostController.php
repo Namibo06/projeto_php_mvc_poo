@@ -11,6 +11,7 @@
              
             //params
              $parametros=array();
+             $parametros['id']= $postagem->id;
              $parametros['titulo'] = $postagem->titulo;
              $parametros['conteudo'] = $postagem->conteudo;
              $parametros['comentarios']= $postagem->comentarios;
@@ -21,6 +22,20 @@
  
             } catch (Exception $e) {
              echo $e->getMessage();
+            }
+        }
+
+        public function addComent(){
+
+            try{
+                Comentarios::inserir($_POST);
+               $id= $_POST['id'];
+
+                header("Location: http://localhost/crud-mvc-poo-php/?pagina=post&metodo=index&id=$id");
+            }catch (Exception $e) {
+                echo '<script>alert("Sua falha na inserção de comentário é: '.$e->getMessage().'");</script>';
+
+                echo '<script>location.href="http://localhost/crud-mvc-poo-php/?pagina=post&metodo=index&id='.$_POST['id'].'"</script>';
             }
         }
     }

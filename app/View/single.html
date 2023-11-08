@@ -8,6 +8,19 @@
         <br>
         <hr>
         <br>
+       
+        <form action="http://localhost/crud-mvc-poo-php/?pagina=post&metodo=addComent" method="post">
+            <label>Nome</label>
+            <br>
+            <input type="text" name="nome" title="nome"><br><br>
+            <label>Mensagem</label>
+            <br>
+            <textarea name="msg" id="" cols="30" rows="10" style="resize:none;" title="mensagem"></textarea><br><br>
+            <input type="hidden" name="id" value="{{id}}">
+
+            <input type="submit" value="Enviar">
+        </form><br><br>
+
         <!--if-->
         {% if comentarios == false %}
             <p>Nenhum comentário encontrado para essa postagem</p>
