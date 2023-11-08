@@ -1,1 +1,1 @@
-# projeto_php_mvc_poo
+# Projeto PHP com POO(Programação Oreintada a Objeto) e arquitetura MVC(Model-View-Controller)
