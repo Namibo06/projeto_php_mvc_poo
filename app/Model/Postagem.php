@@ -59,5 +59,28 @@
             }
             return true;
         }
+
+        public static function update($params){
+            $pdo=Conexao::getConn();
+            $query="UPDATE crud.postagem SET titulo = ?,conteudo = ? WHERE id = ?";
+            $sql=$pdo->prepare($query);
+            $sql->execute(array($params['titulo'],$resultado=$params['conteudo'],$params['id']));
+            if($resultado == 0){
+                throw new Exception('Falha ao inserir publicação');
+            }
+            return true;   
+        }
+
+        public static function delete($id){
+            //var_dump($dadosDelete['id']);
+            $pdo=Conexao::getConn();
+            $query="DELETE FROM crud.postagem WHERE id = ?";
+            $sql=$pdo->prepare($query);
+            $resultado=$sql->execute(array($id));
+            if ($resultado == 0) {
+                throw new Exception('Falha ao tentar excluir publicação');
+            }
+            return true;
+        }
     }
 ?>

@@ -14,8 +14,8 @@
     <tr>
         <th>{{postagem.id}}</th>
         <th>{{postagem.titulo}}</th>
-        <th>Alterar</th>
-        <th>Deletar</th>
+        <th><a href="http://localhost/crud-mvc-poo-php/?pagina=admin&metodo=change&id={{postagem.id}}">Alterar</a></th>
+        <th><a href="http://localhost/crud-mvc-poo-php/?pagina=admin&metodo=delete&id={{postagem.id}}">Deletar</a></th>
     </tr>
     {% endfor %}
 </table>
