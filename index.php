@@ -5,6 +5,8 @@
     require_once 'app/Controller/ErroController.php';
     require_once 'app/Controller/HomeController.php';
     require_once 'app/Controller/PostController.php';
+    require_once 'app/Controller/SobreController.php';
+    require_once 'app/Model/Comentarios.php';
     require_once 'app/Model/Postagem.php';
 
     require_once 'vendor/autoload.php';

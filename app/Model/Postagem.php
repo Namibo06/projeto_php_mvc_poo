@@ -33,6 +33,9 @@
 
             if(!$resultado){
                 throw new Exception("Não foi encontrado nenhum registro no banco");
+            }else{
+                $resultado->comentarios=Comentarios::selecionarComentarios($resultado->id);
+                //retornar um array vazio ou com resultados,para poder pegar na view
             }
             return $resultado;
         }
