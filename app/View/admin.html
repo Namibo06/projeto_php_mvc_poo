@@ -1,0 +1,21 @@
+<h1>Gerenciador de Conteúdo</h1>
+
+<a href="http://localhost/crud-mvc-poo-php/?pagina=admin&metodo=create" title="Criar Publicação">Criar Publicação</a><br><br>
+<hr>
+<br>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Alteração</th>
+        <th>Deleção</th>
+    </tr>
+        {% for postagem in postagens %}
+    <tr>
+        <th>{{postagem.id}}</th>
+        <th>{{postagem.titulo}}</th>
+        <th>Alterar</th>
+        <th>Deletar</th>
+    </tr>
+    {% endfor %}
+</table>

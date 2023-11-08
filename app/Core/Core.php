@@ -4,7 +4,12 @@
 
     class Core{
         public function start($urlGet){
-            $acao = 'index';
+            if (isset($urlGet['metodo'])) {
+                $acao =  $urlGet['metodo'];
+            }else{
+                $acao = 'index';
+            }
+            
             if(isset($urlGet['pagina'])){
             //toda requisição na url para página,vai começar com '?pagina='
             //ucfirst() é para deixar aa primeira letra mairo para ser identificada na HomeController e tem uma concatenação no final

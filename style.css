@@ -32,6 +32,7 @@ div#topo ul{
     flex-direction: row;
     justify-content: center;
     padding-top: 20px;
+    position: relative;
 }
 
 div#topo li{
@@ -47,6 +48,11 @@ div#topo a{
 
 div#topo a:hover{
     text-decoration: underline;
+}
+
+.flutuacao-dir{
+    position: absolute;
+    right: 10px;
 }
 
 div#conteudo{

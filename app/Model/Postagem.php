@@ -39,5 +39,25 @@
             }
             return $resultado;
         }
+
+        //função estática do insert() utilizado no AdminController,ele pega daqui
+        public static function insert($dadosPost){
+            //verificando se os dados vinheram vazios
+            if(empty($dadosPost['titulo']) || empty($dadosPost['conteudo'])){
+                throw new Exception('Preencha todos os campos');
+                //return false;
+            }
+            
+            $pdo = Conexao::getConn();
+            $query="INSERT INTO crud.postagem (titulo,conteudo) VALUES (?,?)";
+            $sql=$pdo->prepare($query);
+            $res=$sql->execute(array($dadosPost['titulo'],$dadosPost['conteudo']));
+            //não é ideal criar if dentro do controller,por isso,está sendo feito dedntro da função no model
+            if($res == 0){
+                //se for false,pois 0 é false e 1 é true
+                throw new Exception('Falha ao inserir publicação');
+            }
+            return true;
+        }
     }
 ?>

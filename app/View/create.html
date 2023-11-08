@@ -1,0 +1,19 @@
+<h1>Criar Publicação</h1>
+<!--
+    funcionamento:
+
+quando ele clicar no cadastrar,vai mandar os dados para a pagina admin,mas o metodo vai ser o insert
+-->
+<form action="?pagina=admin&metodo=insert" method="post">
+    <label>Titulo</label>
+    <br>
+    <input type="text" name="titulo" title="titulo">
+    <br><br>
+    <label>Conteúdo</label>
+    <br>
+    <textarea name="conteudo" title="conteudo" style="resize:none;" cols="40" rows="7"></textarea><br><br>
+
+    <!--sem name,porque senão iria mandar junto com os dados-->
+    <input type="submit" value="Cadastrar">
+
+</form>
